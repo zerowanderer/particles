@@ -1,5 +1,3 @@
-
-
 use macroquad::prelude::*;
 use macroquad::ui::root_ui;
 
@@ -25,15 +23,7 @@ impl Particle {
 fn particle_move(particle : &mut Particle) {
     particle.position += particle.velocity; 
 }
-// fn particle_gravity(particle : &mut Particle, particle2 : &mut Particle) {
-//     let direction = particle2.position - particle.position;
-//     let distance = direction.length();
-//     if distance > MINIMUM_DISTANCE {
-//         let force = (direction / distance) * FORCE_MAGNITUDE;
-//         particle.velocity += force;
-//         particle2.velocity -= force;
-//     }
-// }
+
 fn particle_gravity_vector(particles: &mut Vec<Particle>) {
     for i in 0..particles.len() {
         for j in (i + 1)..particles.len() {
